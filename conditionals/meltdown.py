@@ -64,5 +64,13 @@ def fail_safe(temperature, neutrons_produced_per_second, threshold):
     2. 'NORMAL' -> `temperature * neutrons per second` +/- 10% of `threshold`
     3. 'DANGER' -> `temperature * neutrons per second` is not in the above-stated ranges
     """
+    criticality = float (temperature * neutrons_produced_per_second)
+    min_threshold = 0.9 * threshold
+    max_threshold = 1.1 * threshold
 
-    pass
+    if criticality < min_threshold:
+        return 'LOW'
+    if min_threshold <= criticality <= max_threshold:
+        return 'NORMAL'
+    return 'DANGER'
+    
