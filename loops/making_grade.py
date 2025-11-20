@@ -37,8 +37,12 @@ def above_threshold(student_scores, threshold):
     :param threshold: int - threshold to cross to be the "best" score.
     :return: list - of integer scores that are at or above the "best" threshold.
     """
-
-    pass
+    a = []
+    for student in student_scores:
+        if student >= threshold:
+            a.append(student)
+    return a
+            
 
 
 def letter_grades(highest):
@@ -66,7 +70,7 @@ def student_ranking(student_scores, student_names):
     :return: list - of strings in format ["<rank>. <student name>: <score>"].
     """
 
-    pass
+    
 
 
 def perfect_score(student_info):
