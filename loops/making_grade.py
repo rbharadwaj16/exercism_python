@@ -58,8 +58,12 @@ def letter_grades(highest):
             71 <= "B" <= 85
             86 <= "A" <= 100
     """
-
-    pass
+    diff = highest - 40
+    step_up = int(diff/4)
+    a = []
+    for i in range(41, highest, step_up):
+        a.append(i)
+    return a
 
 
 def student_ranking(student_scores, student_names):
@@ -69,8 +73,11 @@ def student_ranking(student_scores, student_names):
     :param student_names: list - of string names by exam score in descending order.
     :return: list - of strings in format ["<rank>. <student name>: <score>"].
     """
-
-    
+    a = []
+    for index, value in enumerate(student_names):
+        a.append(f'{index + 1}. {value}: {student_scores[index]}')
+    return a
+      
 
 
 def perfect_score(student_info):
@@ -80,4 +87,7 @@ def perfect_score(student_info):
     :return: list - first `[<student name>, 100]` or `[]` if no student score of 100 is found.
     """
 
-    pass
+    for student in student_info:
+        if student[-1] == 100:
+            return student
+    return []
