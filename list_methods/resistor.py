@@ -1,35 +1,21 @@
+def label(bands):
+    COLOURS = ["black", "brown", "red", "orange", "yellow", "green", "blue", "violet", "grey", "white"]
+    ohms = (10 * COLOURS.index(bands[0]) + COLOURS.index(bands[1])) * (10 ** COLOURS.index(bands[2]))
+    
+    if ohms > 1_000_000_000:
+        prefix = "giga"
+        ohms //= 1_000_000_000
+    elif ohms > 1_000_000:
+        prefix = "mega"
+        ohms //= 1_000_000
+    elif ohms > 1_000:
+        prefix = "kilo"
+        ohms //= 1_000
+    else:
+        prefix = ""
+    
+    return f"{ohms} {prefix}ohms"
 
-colors = ["blue", "grey", "brown"]
-
-black = 0
-brown = 1
-red = 2
-orange = 3
-yellow = 4
-green = 5
-blue = 6
-violet = 7
-grey = 8
-white = 9
-
-
-multiplier = globals()[colors[-1]]
-
-str = ""
-for i in range(multiplier):
-    str += "0"
-
-
-if str.endswith("000000000"):
-    print(f'{globals()[colors[0]]}{globals()[colors[1]]} gigaohms')  
-elif str.endswith("000000"):
-    print(f'{globals()[colors[0]]}{globals()[colors[1]]} megaohms')
-elif str.endswith("000"):
-    print(f'{globals()[colors[0]]}{globals()[colors[1]]} kiloohms')
-elif str.endswith("00"):
-    print(f'{globals()[colors[0]]}{globals()[colors[1]]} {str} ohms')
-elif str.endswith("0"):
-    print(f'{globals()[colors[0]]}{globals()[colors[1]]} ohms')
 
 
 
