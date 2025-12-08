@@ -77,4 +77,3 @@ def list_inventory(inventory):
             result.append((item, inventory[item]))
     
     return (result)
-
