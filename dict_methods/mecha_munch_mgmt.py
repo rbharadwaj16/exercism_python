@@ -1,10 +1,18 @@
-def update_recipes(ideas, update):
-    """Update recipes with new ingredient quantities.
-    
-    :param ideas: dict - recipe names and their ingredient dictionaries
-    :param update: tuple - tuples of (recipe_name, updated_ingredients_dict)
-    :return: dict - updated recipe dictionary
-    """
-    for recipe_name, updated_ingredients in update:
-        ideas[recipe_name] = updated_ingredients
-    return ideas
+
+cart = {"Banana": 3, "Apple": 2, "Orange": 1, "Milk": 2}
+aisle =  {
+            "Banana": ["Aisle 5", False],
+            "Apple": ["Aisle 4", False],
+            "Orange": ["Aisle 4", False],
+            "Milk": ["Aisle 2", True],
+        }
+
+
+
+for item in cart:
+    if item in aisle:
+        aisle[item].insert(0, cart[item])
+
+aisle = dict(sorted(aisle.items(), reverse=True))
+
+print(aisle)
