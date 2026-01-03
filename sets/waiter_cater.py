@@ -54,8 +54,16 @@ def categorize_dish(dish_name, dish_ingredients):
     All dishes will "fit" into one of the categories imported from `sets_categories_data.py`
 
     """
-
-    pass
+    if dish_ingredients.issubset(VEGAN):
+        return (f'{dish_name}: VEGAN')
+    elif dish_ingredients.issubset(VEGETARIAN):
+        return (f'{dish_name}: VEGETARIAN')
+    elif dish_ingredients.issubset(PALEO):
+        return (f'{dish_name}: PALEO')
+    elif dish_ingredients.issubset(KETO):
+        return (f'{dish_name}: KETO')
+    elif dish_ingredients.issubset(OMNIVORE):
+        return (f'{dish_name}: OMNIVORE')
 
 
 def tag_special_ingredients(dish):
