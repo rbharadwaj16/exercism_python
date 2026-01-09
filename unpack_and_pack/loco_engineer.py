@@ -49,5 +49,4 @@ def fix_wagon_depot(wagons_rows):
     :param wagons_rows: list[list[tuple]] - the list of rows of wagons.
     :return: list[list[tuple]] - list of rows of wagons.
     """
-    pass
-#to push
+    return list(map(list, zip(*wagons_rows)))
