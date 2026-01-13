@@ -1,5 +1,7 @@
-x_list = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]
+alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+target = "C"
 
-```
-working through psuedocode:
+max_idx = alphabet.find(target)
 
+
+print(max_idx)
