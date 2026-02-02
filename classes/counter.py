@@ -14,6 +14,8 @@ class counter:
     
     def reset(self):
         self.value = self.start
+        return self.value
+        
 
 
 x = counter(start=10, step=4)
